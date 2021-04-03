@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.revel.experimentalmusicapp">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name=".AlbumService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name=".AlbumPlay"
+            android:excludeFromRecents="true"/>
+        <activity
+            android:name=".BackgroundActivity"
+            android:excludeFromRecents="true" />
+
+        <activity
+            android:name=".MenuActivity"
+            android:excludeFromRecents="true" />
+        <activity
+            android:name=".Splash"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".SearchActivity"
+            android:excludeFromRecents="true" />
+        <activity
+            android:name=".AlbumActivity"
+            android:excludeFromRecents="true" />
+        <activity
+            android:name=".DuoDrawer"
+            android:excludeFromRecents="true" />
+
+        <receiver
+            android:name=".OutgoingReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Themes" />
+
+        <receiver
+            android:name=".CallReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MyReceiver4"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".MyReceiver3"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".MyReceiver2"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".SecondActivity" />
+    </application>
+
+</manifest>
